@@ -13,8 +13,7 @@ export async function connectDB() {
         await db.sync({ alter: true })
         console.log(colors.blue('Conexion exitosa a la db'))
     } catch (error){
-        console.log(colors.red.bold('Hubo un error en la db'))
-        console.log(error) 
+        console.error('Error detallado:', error) // 👈 cambia esto
     }
 }
 connectDB()
