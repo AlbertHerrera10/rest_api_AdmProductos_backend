@@ -10,13 +10,12 @@ import swaggerSpec from './config/swagger';
 export async function connectDB() {
     try{
         await db.authenticate()
-        db.sync()
-        //console.log(colors.blue('Conexion exitosa a la db'))
+        await db.sync({ alter: true })
+        console.log(colors.blue('Conexion exitosa a la db'))
     } catch (error){
-        //console.log(error)
         console.log(colors.red.bold('Hubo un error en la db'))
+        console.log(error) 
     }
-    
 }
 connectDB()
 
