@@ -2,6 +2,7 @@ name: Keep alive
 on:
   schedule:
     - cron: '0 0 */5 * *' # cada 5 días
+  workflow_dispatch:
 
 jobs:
   ping:
