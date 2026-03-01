@@ -1,0 +1,11 @@
+name: Keep alive
+on:
+  schedule:
+    - cron: '0 0 */5 * *' # cada 5 días
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping API
+        run: curl https://rest-api-adm-productos-backend.vercel.app/api/products
